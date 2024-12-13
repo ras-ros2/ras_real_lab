@@ -1,29 +1,29 @@
 repositories:
-    ras_aws_transport:
+    ros2_ws/src/ras_aws_transport:
         type: git
-        url: git@github.com:acceleration-robotics/ras_aws_transport.git
+        url: git@github.com:ras-ros2/ras_aws_transport.git
         version: main
-    ras_bt_framework:
+    ros2_ws/src/ras_bt_framework:
         type: git
-        url: git@github.com:acceleration-robotics/ras_bt_framework.git
-        version: modular
-    ras_common:
-        type: git
-        url: git@github.com:acceleration-robotics/ras_common.git
+        url: git@github.com:ras-ros2/ras_bt_framework.git
         version: main
-    ras_interfaces:
+    ros2_ws/src/ras_common:
         type: git
-        url: git@github.com:acceleration-robotics/ras_interfaces.git
+        url: git@github.com:ras-ros2/ras_common.git
         version: main
-    ras_moveit:
+    ros2_ws/src/ras_interfaces:
         type: git
-        url: git@github.com:acceleration-robotics/ras_moveit.git
-        version: modular
-    ras_resource_lib:
-        type: git
-        url: git@github.com:acceleration-robotics/ras_resource_lib.git
+        url: git@github.com:ras-ros2/ras_interfaces.git
         version: main
-    ras_sim:
+    ros2_ws/src/ras_moveit:
         type: git
-        url: git@github.com:acceleration-robotics/ras_sim.git
+        url: git@github.com:ras-ros2/ras_moveit.git
+        version: main
+    ros2_ws/src/ras_resource_lib:
+        type: git
+        url: git@github.com:ras-ros2/ras_resource_lib.git
+        version: main
+    ros2_ws/src/ras_sim:
+        type: git
+        url: git@github.com:ras-ros2/ras_sim.git
         version: main
