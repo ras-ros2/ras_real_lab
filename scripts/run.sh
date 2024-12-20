@@ -9,7 +9,9 @@ tmux send-keys -t main_session:0.1 "ros2 run ras_moveit moveit_real_server" C-m
 tmux send-keys -t main_session:0.2 "ros2 run ras_bt_framework TrajectoryRecordsService.py" C-m
 
 tmux new-window -t main_session:1 -n 'robot'
-tmux send-keys -t main_session:1.0 "ros2 launch ras_app_core main.launch.py" C-m
+tmux split-window -v -t main_session:1
+tmux send-keys -t main_session:1.0 "ros2 launch ras_app_core sim.launch.py" C-m
+tmux send-keys -t main_session:1.1 "ros2 run ras_aws_transport ftp_server.py" C-m
 
 tmux new-window -t main_session:2 -n 'logging'
 tmux split-window -v -t main_session:2
