@@ -63,10 +63,10 @@ class IntermediateGripperServer(Node):
                     self.get_logger().info("Gripper Closed")
                     resp.success = True
                 else :
-                    self.get_logger().error(f"Gripper Open Failed with error code: {res}")
+                    self.get_logger().error(f"Gripper Close Failed with error code: {res}")
                     resp.success = False
             else:
-                self.get_logger().info("Fake Gripper Opened")
+                self.get_logger().info("Fake Gripper Closed")
 
         resp.success = True
         return resp
