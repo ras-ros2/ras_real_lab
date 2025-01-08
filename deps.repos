@@ -27,3 +27,7 @@ repositories:
         type: git
         url: git@github.com:ras-ros2/ras_sim.git
         version: dev
+    ros2_ws/src/ras_perception:
+        type: git
+        url: git@github.com:ras-ros2/ras_perception.git
+        version: dev
