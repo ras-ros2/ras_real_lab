@@ -5,5 +5,7 @@ ros2_ws/.vscode
 
 configs/*
 !configs/.keep
+logs/*
+!logs/.keep
 
 serve/
