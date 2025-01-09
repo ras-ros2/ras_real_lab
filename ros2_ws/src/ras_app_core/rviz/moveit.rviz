@@ -6,8 +6,10 @@ Panels:
       Expanded:
         - /RobotModel1
         - /Trajectory1
+        - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.46875
-    Tree Height: 130
+    Tree Height: 222
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -54,8 +56,6 @@ Visualization Manager:
       MoveIt_Planning_Time: 5
       MoveIt_Use_Cartesian_Path: false
       MoveIt_Use_Constraint_Aware_IK: false
-      MoveIt_Warehouse_Host: 127.0.0.1
-      MoveIt_Warehouse_Port: 33829
       MoveIt_Workspace:
         Center:
           X: 0
@@ -100,6 +100,11 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          link6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           link_base:
             Alpha: 1
             Show Axes: false
@@ -109,6 +114,20 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          link_tcp:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          realsense_camera:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          uflite_gripper_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           world:
             Alpha: 1
             Show Axes: false
@@ -122,6 +141,7 @@ Visualization Manager:
         State Display Time: 0.05 s
         Trail Step Size: 1
         Trajectory Topic: display_planned_path
+        Use Sim Time: false
       Planning Metrics:
         Payload: 1
         Show Joint Torques: false
@@ -135,7 +155,7 @@ Visualization Manager:
         Goal State Color: 250; 128; 0
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
-        Planning Group: xarm5
+        Planning Group: lite6
         Query Goal State: true
         Query Start State: false
         Show Workspace: false
@@ -183,6 +203,11 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          link6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           link_base:
             Alpha: 1
             Show Axes: false
@@ -192,6 +217,20 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          link_tcp:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          realsense_camera:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          uflite_gripper_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           world:
             Alpha: 1
             Show Axes: false
@@ -244,6 +283,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        link6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         link_base:
           Alpha: 1
           Show Axes: false
@@ -253,10 +297,27 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        link_tcp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        realsense_camera:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        uflite_gripper_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         world:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+      Mass Properties:
+        Inertia: false
+        Mass: false
       Name: RobotModel
       TF Prefix: ""
       Update Interval: 0
@@ -297,6 +358,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        link6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         link_base:
           Alpha: 1
           Show Axes: false
@@ -306,6 +372,20 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        link_tcp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        realsense_camera:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        uflite_gripper_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         world:
           Alpha: 1
           Show Axes: false
@@ -321,6 +401,103 @@ Visualization Manager:
       State Display Time: 0.05 s
       Trail Step Size: 1
       Trajectory Topic: /display_planned_path
+      Use Sim Time: false
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: false
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /realsense_camera/image_raw
+      Value: false
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        cam_0:
+          Value: true
+        cam_1:
+          Value: true
+        cam_2:
+          Value: true
+        cam_3:
+          Value: true
+        link1:
+          Value: false
+        link2:
+          Value: false
+        link3:
+          Value: false
+        link4:
+          Value: false
+        link5:
+          Value: false
+        link6:
+          Value: false
+        link_base:
+          Value: false
+        link_eef:
+          Value: false
+        link_tcp:
+          Value: false
+        obj_0:
+          Value: true
+        obj_1:
+          Value: true
+        obj_2:
+          Value: true
+        obj_3:
+          Value: true
+        realsense_camera:
+          Value: false
+        uflite_gripper_link:
+          Value: false
+        world:
+          Value: false
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        world:
+          link_base:
+            link1:
+              link2:
+                link3:
+                  link4:
+                    link5:
+                      link6:
+                        link_eef:
+                          uflite_gripper_link:
+                            link_tcp:
+                              {}
+            obj_0:
+              {}
+            obj_1:
+              {}
+            obj_2:
+              {}
+            obj_3:
+              {}
+          realsense_camera:
+            cam_0:
+              {}
+            cam_1:
+              {}
+            cam_2:
+              {}
+            cam_3:
+              {}
+      Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
@@ -337,6 +514,9 @@ Visualization Manager:
     - Class: rviz_default_plugins/Measure
       Line color: 128; 128; 0
     - Class: rviz_default_plugins/SetInitialPose
+      Covariance x: 0.25
+      Covariance y: 0.25
+      Covariance yaw: 0.06853891909122467
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -365,45 +545,47 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.005836248397827
+      Distance: 3.0707881450653076
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 0.47622549533843994
+        Y: -0.06289993971586227
+        Z: 0.3636249899864197
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5753980278968811
+      Pitch: 0.2203984409570694
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.4903981685638428
+      Yaw: 6.253584384918213
     Saved: ~
 Window Geometry:
-  " - Trajectory Slider":
-    collapsed: false
   Displays:
     collapsed: false
   Height: 812
   Hide Left Dock: false
   Hide Right Dock: false
+  Image:
+    collapsed: false
   MotionPlanning:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000242000002d2fc020000000cfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000010d000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000003c005400720061006a006500630074006f007200790020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004100fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670100000150000001bf0000017d00fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004100ffffff000000010000010f000002d2fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000002d2000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004420000003efc0100000002fb0000000800540069006d00650100000000000004420000000000000000fb0000000800540069006d00650100000000000004500000000000000000000003b5000002d200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000242000002d6fc020000000dfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b00000167000000c700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000003c005400720061006a006500630074006f007200790020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000003f00fffffffb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000003f00fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000001a8000001690000016900fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000000a0049006d00610067006500000002770000009a0000002800ffffff000000010000010f000002d2fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000002d2000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004420000003efc0100000002fb0000000800540069006d00650100000000000004420000000000000000fb0000000800540069006d00650100000000000004500000000000000000000003b5000002d600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Tool Properties:
     collapsed: false
+  Trajectory - Trajectory Slider:
+    collapsed: false
   Views:
     collapsed: false
   Width: 1533
-  X: 2041
+  X: 387
   Y: 192
