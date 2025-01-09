@@ -20,4 +20,11 @@ tmux send-keys -t main_session:2.0 "ros2 run ras_aws_transport log_sender.py" C-
 tmux send-keys -t main_session:2.1 "ros2 run ras_bt_framework executor" C-m
 tmux send-keys -t main_session:2.2 "ros2 run ras_bt_framework FakeGripperServer.py" C-m
 
+tmux new-window -t main_session:3 -n 'debugging'
+
+tmux split-window -v -t main_session:3
+
+tmux send-keys -t main_session:3.0 "ros2 run ras_bt_framework dummy_logging_server.py" C-m
+tmux send-keys -t main_session:3.1 "bash" C-m
+
 tmux attach-session -t main_session
