@@ -7,5 +7,6 @@ configs/*
 !configs/.keep
 logs/*
 !logs/.keep
+scripts/real_mode.bashrc
 
 serve/
