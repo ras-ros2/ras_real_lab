@@ -1,0 +1,1 @@
+export RAS_ROBOT_MODE="sim"
