@@ -11,7 +11,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
     launch = None
     gripper_node = Node(
-            package='ras_app_core',
+            package='ras_app_main',
             executable='intermediate_gripper_server.py',
             name='intermediate_gripper_server',
             output='screen',
@@ -22,13 +22,13 @@ def generate_launch_description():
     if(RAS_ROBOT_MODE == "real"):
         logger.info('Real mode')
         launch = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([FindPackageShare('ras_app_core'), '/launch', '/real.launch.py'])
+            PythonLaunchDescriptionSource([FindPackageShare('ras_app_main'), '/launch', '/real.launch.py'])
         )
 
     elif(RAS_ROBOT_MODE == "sim"):
         logger.info("Sim mode")
         launch = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([FindPackageShare('ras_app_core'), '/launch', '/sim.launch.py'])
+            PythonLaunchDescriptionSource([FindPackageShare('ras_app_main'), '/launch', '/sim.launch.py'])
         )
 
     else:
