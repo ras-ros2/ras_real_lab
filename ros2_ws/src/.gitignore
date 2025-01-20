@@ -1,4 +1,3 @@
-assets/*
-!assets/.keep
+/assets/
 /common_pkgs/
-/ras_cognition/
+/ras_perception/
