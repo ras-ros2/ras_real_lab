@@ -5,7 +5,7 @@ tmux split-window -v -t main_session:0
 tmux split-window -v -t main_session:0
 
 tmux send-keys -t main_session:0.0 "ros2 run ras_transport iot_receiver.py" C-m
-tmux send-keys -t main_session:0.1 "ros2 run ras_moveit moveit_real_server" C-m
+tmux send-keys -t main_session:0.1 "ros2 launch ras_moveit moveit_real_server.launch.py" C-m
 tmux send-keys -t main_session:0.2 "ros2 run ras_bt_framework TrajectoryRecordsService.py" C-m
 
 tmux new-window -t main_session:1 -n 'robot'
@@ -26,8 +26,10 @@ tmux new-window -t main_session:3 -n 'debugging'
 
 tmux split-window -v -t main_session:3
 tmux split-window -v -t main_session:3
+tmux split-window -v -t main_session:3
 
 tmux send-keys -t main_session:3.0 "ros2 run ras_perception aruco_detection.py" C-m
 tmux send-keys -t main_session:3.1 "ros2 run ras_bt_framework dummy_logging_server.py" C-m
+tmux send-keys -t main_session:3.2 "ros2 run ras_transport transport_robot_service.py" C-m
 
 tmux attach-session -t main_session
