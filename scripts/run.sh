@@ -30,6 +30,6 @@ tmux split-window -v -t main_session:3
 
 tmux send-keys -t main_session:3.0 "ros2 run ras_perception aruco_detection.py" C-m
 tmux send-keys -t main_session:3.1 "ros2 run ras_bt_framework dummy_logging_server.py" C-m
-tmux send-keys -t main_session:3.1 "ros2 run ras_transport transport_robot_service.py" C-m
+tmux send-keys -t main_session:3.2 "ros2 run ras_transport transport_robot_service.py" C-m
 
 tmux attach-session -t main_session
