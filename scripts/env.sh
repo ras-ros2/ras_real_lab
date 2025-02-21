@@ -1,12 +1,13 @@
 source /opt/ros/humble/setup.bash
-export RAS_APP_NAME=ras_robot_app
+export RAS_APP_NAME=robot
+export RAS_APP_NAME_FULL=ras_${RAS_APP_NAME}_app
 export RAS_APP_PATH=$(realpath $(dirname "${BASH_SOURCE[0]}")/..)
 export RAS_WORKSPACE_PATH=$RAS_APP_PATH/ros2_ws
 export IGN_GAZEBO_RESOURCE_PATH=$RAS_APP_PATH/assets/objects/old_models:$RAS_APP_PATH/third_party/gazebo_models:${IGN_GAZEBO_RESOURCE_PATH}
 export RAS_ROBOT_MODE=sim
 export RAS_MODE_SCRIPT=$RAS_APP_PATH/scripts/real_mode.bashrc
 source $RAS_WORKSPACE_PATH/install/setup.bash
-export IGN_PARTITION=$RAS_APP_NAME
+export IGN_PARTITION=${RAS_APP_NAME_FULL}
 export ROS_DOMAIN_ID=1
 
 source_mode_script(){
