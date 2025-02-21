@@ -5,7 +5,8 @@ from launch.launch_context import LaunchContext
 from launch.logging import get_logger
 from ament_index_python.packages import get_package_share_directory
 from uf_ros_lib.moveit_configs_builder import MoveItConfigsBuilder
-
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
 
@@ -109,6 +110,25 @@ def generate_launch_description():
         arguments=["lite6_traj_controller", "-c", "/controller_manager"],
     )
 
+    realsense_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(
+                get_package_share_directory("realsense2_camera"),
+                "launch",
+                "rs_launch.py",
+            )
+        ),
+        launch_arguments={
+            'pointcloud.enable': 'true',
+            'depth_module.depth_profile': '1280x720x30'
+        }.items()
+    )
+    fake_tf_launch = Node(
+        package="ras_perception",
+        executable="fake_tf.py",
+        output="screen",
+    )
+
     return LaunchDescription(
         [
             rviz_node,
@@ -118,5 +138,7 @@ def generate_launch_description():
             ros2_control_node,
             joint_state_broadcaster_spawner,
             arm_controller_spawner,
+            realsense_launch,
+            fake_tf_launch,
         ]
     )
