@@ -37,7 +37,7 @@ def generate_launch_description():
 
     # RViz
     rviz_config_file = (
-        get_package_share_directory("ras_app_core") + "/rviz/moveit.rviz"
+        get_package_share_directory("ras_app_main") + "/rviz/moveit.rviz"
     )
 
     rviz_node = Node(
@@ -75,6 +75,13 @@ def generate_launch_description():
         parameters=[{"use_sim_time": True}]
     )
 
+    fake_gripper_server = Node(
+        package="ras_bt_framework",
+        executable="FakeGripperServer.py",
+        output="screen",
+        parameters=[{"use_sim_time": True}]
+    )
+
     sim_launch = IncludeLaunchDescription( PythonLaunchDescriptionSource(
         [os.path.join(get_package_share_directory('ras_sim'),
             'launch', 'main.launch.py')]))
@@ -84,6 +91,7 @@ def generate_launch_description():
             rviz_node,
             run_move_group_node,
             sim_launch,
+            fake_gripper_server,
             spawn_controllers_manipulator,
             spawn_controllers_state
         ]
