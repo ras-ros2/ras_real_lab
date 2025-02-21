@@ -12,7 +12,7 @@ tmux send-keys -t main_session:0.2 "ros2 run ras_bt_framework TrajectoryRecordsS
 tmux new-window -t main_session:1 -n 'robot'
 tmux split-window -v -t main_session:1
 tmux split-window -v -t main_session:1
-tmux send-keys -t main_session:1.0 "ros2 launch ras_app_main real.launch.py" C-m
+tmux send-keys -t main_session:1.0 "ros2 launch ras_app_main sim.launch.py" C-m
 # tmux send-keys -t main_session:1.1 "ros2 run ras_transport ftp_server.py" C-m
 tmux send-keys -t main_session:1.2 "ros2 run ras_bt_framework executor" C-m
 

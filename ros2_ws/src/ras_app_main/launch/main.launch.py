@@ -34,4 +34,4 @@ def generate_launch_description():
     else:
         logger.error("Invalid mode",RAS_ROBOT_MODE)
 
-    return LaunchDescription([launch, gripper_node])
+    return LaunchDescription([launch])
