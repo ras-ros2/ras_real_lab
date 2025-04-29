@@ -77,7 +77,7 @@ def generate_launch_description():
 
     fake_gripper_server = Node(
         package="ras_bt_framework",
-        executable="FakeGripperServer.py",
+        executable="GripperStatus.py",
         output="screen",
         parameters=[{"use_sim_time": True}]
     )
