@@ -123,9 +123,9 @@ def generate_launch_description():
             'depth_module.depth_profile': '1280x720x30'
         }.items()
     )
-    fake_tf_launch = Node(
+    static_tf_launch = Node(
         package="ras_perception",
-        executable="fake_tf.py",
+        executable="static_tf.py",
         output="screen",
     )
 
@@ -139,6 +139,6 @@ def generate_launch_description():
             joint_state_broadcaster_spawner,
             arm_controller_spawner,
             realsense_launch,
-            fake_tf_launch,
+            static_tf_launch,
         ]
     )
