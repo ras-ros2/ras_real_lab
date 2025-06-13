@@ -34,7 +34,7 @@ tmux send-keys -t main_session:3.1 "ros2 run ras_perception logging_server.py" C
 # tmux send-keys -t main_session:3.2 "ros2 run ras_transport transport_robot_service.py" C-m
 tmux send-keys -t main_session:3.2 "ros2 launch realsense2_camera rs_launch.py depth_module.depth_profile:=1280x720x30 pointcloud.enable:=true initial_reset:=true
 " C-m
-# tmux send-keys -t main_session:3.3 "ros2 run ras_perception fake_tf.py" C-m
+tmux send-keys -t main_session:3.3 "ros2 run ras_perception static_tf.py" C-m
 
 # Session 4 — for commented-out alternatives
 tmux new-window -t main_session:4 -n 'alt_debug'
